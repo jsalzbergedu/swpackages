@@ -1,0 +1,31 @@
+# Maintainer: Jacob Salzberg <jssalzbe@ncsu.edu>
+pkgname=swpycv
+pkgver=1
+pkgrel=1
+arch=('any')
+url="http://www.ncsurobotics.com/"
+
+# No agreed upon license afaik, but for all intents and purposes open source
+# ¯\_(ツ)_/¯
+license=('APACHE')
+
+pkgdesc='Helper routines for interfacing C libraries with ctypes that use OpenCV'
+source=('git+https://github.com/jsalzbergedu/swpycv.git#branch=cmake-and-clang')
+makedepends=('git' 'cmake' 'ninja' 'python2' 'opencv2')
+md5sums=('SKIP')
+
+build() {
+    pushd swpycv
+    mkdir build
+    pushd build
+    cmake .. -GNinja
+    ninja
+    popd
+    popd
+}
+
+package() {
+    pushd swpycv
+    python2 setup.py install --root="$pkgdir/" --optimize=1
+    popd
+}

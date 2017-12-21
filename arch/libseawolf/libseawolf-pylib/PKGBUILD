@@ -1,0 +1,41 @@
+pkgname=libseawolf-pylib
+pkgver=1
+pkgrel=1
+depends=('libseawolf')
+arch=('i686' 'x86_64')
+url="http://www.ncsurobotics.com/"
+
+# No agreed upon license afaik, but for all intents and purposes open source
+# ¯\_(ツ)_/¯
+license=('APACHE')
+
+pkgdesc='Basic data structures and utilities for seawolf.'
+source=('git+https://github.com/jsalzbergedu/libseawolf.git#branch=cmake-and-clang')
+makedepends=('git' 'cmake' 'ninja' 'python2' 'swig')
+md5sums=('SKIP')
+
+build() {
+    pushd libseawolf
+    mkdir build
+    pushd build
+    cmake .. -GNinja
+    ninja
+    popd # To get back to libseawolf dir
+    pushd src
+    pushd python
+    python2 setup.py build_ext build
+    popd
+    popd
+    popd
+}
+
+package() {
+    pushd libseawolf
+    pushd src
+    pushd python
+    python2 setup.py install --root="$pkgdir/" --optimize=1
+    popd
+    popd
+    popd
+}
+

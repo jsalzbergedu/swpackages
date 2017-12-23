@@ -1,4 +1,5 @@
 #!/bin/bash
+set -e
 git clone -b cmake-and-clang https://github.com/jsalzbergedu/libseawolf.git
 pushd libseawolf
 mkdir build

@@ -1,11 +1,11 @@
 #!/bin/bash
 set -e
 git clone -b cmake-and-clang https://github.com/jsalzbergedu/libseawolf.git
-pushd libseawolf
+qpushd libseawolf
 mkdir build
-pushd build
+qpushd build
 cmake -DCMAKE_INSTALL_PREFIX=/usr .. -GNinja
 ninja
-cpack -GDEB
-popd
-popd
+cpack -G DEB
+qpopd
+qpopd

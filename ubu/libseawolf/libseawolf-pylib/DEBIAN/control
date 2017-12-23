@@ -1,0 +1,9 @@
+Package: libseawolf-pylib
+Version: 0.1.1
+Section: devel
+Priority: optional
+Architecture: any
+Depends: python2, libseawolf
+Installed-Size: 309
+Maintainer: ncsurobotics@ncsurobotics.com
+Description: Seawolf core libraries

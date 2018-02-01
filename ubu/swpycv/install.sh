@@ -1,3 +1,8 @@
 #!/bin/bash
 
-echo "Install file for $PWD"
+PKGS="$(ls | grep *.deb)"
+
+for pkg in "${PKGS[@]}"
+do
+    sudo dpkg -i "$pkg"
+done

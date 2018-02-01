@@ -24,17 +24,6 @@ qpopd
 qpopd
 qpopd
 
-# Clean out the DEBIAN dir
-qpushd DEBIAN
-for file in *
-do
-    if ! anyeq "$file" control
-    then
-	rm -rf "$file"
-    fi
-done
-qpopd
-
 # Finish packaging 
 cp -r DEBIAN "$pkgdir/"
 dpkg -b libseawolf-pylib

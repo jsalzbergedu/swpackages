@@ -2,7 +2,7 @@ Package: libseawolf
 Version: 0.1.1
 Section: devel
 Priority: optional
-Architecture: any
+Architecture: amd64, i386
 Depends:
 Installed-Size: 309
 Maintainer: ncsurobotics@ncsurobotics.com

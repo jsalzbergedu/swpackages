@@ -2,8 +2,8 @@ Package: swpycv
 Version: 0.1.1
 Section: devel
 Priority: optional
-Architecture: any
-Depends: python2, libseawolf
+Architecture: amd64
+Depends: python, libseawolf
 Installed-Size: 309
 Maintainer: ncsurobotics@ncsurobotics.com
-Description: Seawolf core libraries
+Description: Helper routines for interfacing C libraries with ctypes that use OpenCV

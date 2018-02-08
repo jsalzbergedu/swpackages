@@ -1,0 +1,9 @@
+Package: svr-pylib
+Version: 0.1.1
+Section: devel
+Priority: optional
+Architecture: amd64
+Depends: python, libseawolf, swpycv
+Installed-Size: 309
+Maintainer: ncsurobotics@ncsurobotics.com
+Description: Seawolf core libraries
